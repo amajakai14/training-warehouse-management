@@ -8,8 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
-import java.time.LocalDate;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -27,17 +25,22 @@ public class OrderDatasource implements OrderRepository {
     }
 
     private void create(ExampleOrderEntity entity) {
-            String sql = "INSERT INTO example_order(item_id, name, amount, order_status, order_date) VALUES (?, ?, ?, ?, ?)";
-            jdbcTemplate.update(sql, entity.itemId, entity.name, entity.amount, entity.orderStatus.name(), entity.orderDate);
+        String sql = "INSERT INTO example_order(item_id, name, amount, order_status, order_date) VALUES (?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, entity.itemId, entity.name, entity.amount, entity.orderStatus.name(), entity.orderDate);
     }
 
     @Override
     public void updateOrder(ExampleOrder order) {
         ExampleOrderEntity entity = ExampleOrderEntity.of(order);
-        //entity.update();
-            String sql = "UPDATE example_order SET name = ?, amount = ?, order_status = ?, order_date = ? WHERE id = ?";
-            jdbcTemplate.update(sql);
-
+        String sql = "UPDATE example_order SET name = ?, amount = ?, order_status = ?, order_date = ? WHERE id = ?";
+        jdbcTemplate.update(
+                sql,
+                entity.name,
+                entity.amount,
+                entity.orderStatus.name(),
+                entity.orderDate,
+                entity.id
+        );
     }
 
     @Override

@@ -2,33 +2,36 @@ package com.excelence.demo.controller.order;
 
 import com.excelence.demo.model.ExampleOrder;
 import com.excelence.demo.model.OrderStatus;
+import com.excelence.demo.model.ValidateResult;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 
-public class CreateExampleOrderRequest {
+public class ExampleOrderRequest {
     public final int itemId;
     public final String name;
     public final int amount;
     public final String orderStatus;
     public final String orderDate;
 
-    boolean validate() {
-        return OrderStatus.validOf(orderStatus);
+    ValidateResult validate() {
+        if (amount < 1) return ValidateResult.failed("amount can't be less than 1");
+        if (OrderStatus.validOf(orderStatus))
+            return ValidateResult.failed("PENDING, COMPLETED, CANCELLED are only allowed");
+        return ValidateResult.success();
     }
 
     ExampleOrder toExampleOrder() {
-        //String to LocalDate
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate formattedDate = LocalDate.parse(orderDate, formatter);
-        System.out.printf("formattedDate: %s", formattedDate);
-        return new ExampleOrder(0, itemId, name, amount, OrderStatus.valueOf(orderStatus), formattedDate);
+        return toExampleOrder(0);
     }
 
-    public CreateExampleOrderRequest(int itemId, String name, int amount, String orderStatus, String orderDate) {
+    ExampleOrder toExampleOrder(int id) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate formattedDate = LocalDate.parse(orderDate, formatter);
+        return new ExampleOrder(id, itemId, name, amount, OrderStatus.valueOf(orderStatus), formattedDate);
+    }
+
+    public ExampleOrderRequest(int itemId, String name, int amount, String orderStatus, String orderDate) {
         this.itemId = itemId;
         this.name = name;
         this.amount = amount;

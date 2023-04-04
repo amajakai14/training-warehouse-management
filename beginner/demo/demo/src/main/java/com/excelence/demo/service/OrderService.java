@@ -21,6 +21,10 @@ public class OrderService {
         orderRepository.insertOrder(order);
     }
 
+    public void updateOrder(ExampleOrder order) {
+        orderRepository.updateOrder(order);
+    }
+
     public void deleteOrder(int orderId) {
         orderRepository.deleteOrder(orderId);
     }
