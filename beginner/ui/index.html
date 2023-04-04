@@ -9,7 +9,18 @@
   <body>
     <div id="app">hello world</div>
     <button onclick="toAbout()">click to go to about page</button>
+    <button onclick="fetchOrders()">get orders</button>
+    <div id="order-list"></div>
+    <form>
+      <input name="itemId" type="number" />
+      <input name="name" />
+      <input name="amount" type="number" />
+      <input name="orderStatus" />
+      <input name="orderDate" type="date" />
+      <button type="submit" onclick="handlerRegisterOrder(event)">
+        Click me
+      </button>
+    </form>
   </body>
-  <script src="/ui/login/login.js"></script>
-  <script src="/ui/index.js"></script>
+  <script src="./index.js"></script>
 </html>
