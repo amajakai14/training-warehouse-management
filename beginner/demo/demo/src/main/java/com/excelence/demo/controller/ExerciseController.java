@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/hello")
-public class HelloController {
+@RequestMapping("/exercise")
+public class ExerciseController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public String index() {
-        return "Greetings from Java Spring Boot!";
+        return "Call Me!";
     }
 }
