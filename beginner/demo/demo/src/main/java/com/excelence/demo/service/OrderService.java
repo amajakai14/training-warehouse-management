@@ -21,6 +21,10 @@ public class OrderService {
         orderRepository.insertOrder(order);
     }
 
+    public void deleteOrder(int orderId) {
+        orderRepository.deleteOrder(orderId);
+    }
+
     public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }

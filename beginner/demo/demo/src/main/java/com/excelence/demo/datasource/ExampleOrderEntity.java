@@ -9,29 +9,12 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 public class ExampleOrderEntity {
-    @Autowired
-    JdbcTemplate jdbcTemplate;
-    private final int id;
-    private final int itemId;
-    private final String name;
-    private final int amount;
-    private final OrderStatus orderStatus;
-    private final LocalDate orderDate;
-
-    public void create() {
-        String sql = "INSERT INTO example_order(item_id, name, amount, order_status, order_date) VALUES (?, ?, ?, ?, ?)";
-        assert orderDate != null;
-        assert orderStatus != null;
-        assert name != null;
-        assert amount > 0;
-        assert itemId > 0;
-        int update = jdbcTemplate.update(sql, itemId, name, amount, orderStatus.name(), orderDate.toString());
-    }
-
-    public void update() {
-        String sql = "UPDATE example_order SET name = ?, amount = ?, order_status = ?, order_date = ? WHERE id = ?";
-        jdbcTemplate.update(sql);
-    }
+    final int id;
+    final int itemId;
+    final String name;
+    final int amount;
+    final OrderStatus orderStatus;
+    final LocalDate orderDate;
 
     public static ExampleOrderEntity of(ExampleOrder order) {
         return new ExampleOrderEntity(

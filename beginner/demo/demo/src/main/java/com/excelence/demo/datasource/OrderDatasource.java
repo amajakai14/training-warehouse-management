@@ -23,13 +23,27 @@ public class OrderDatasource implements OrderRepository {
     @Override
     public void insertOrder(ExampleOrder order) {
         ExampleOrderEntity entity = ExampleOrderEntity.of(order);
-        entity.create();
+        create(entity);
+    }
+
+    private void create(ExampleOrderEntity entity) {
+            String sql = "INSERT INTO example_order(item_id, name, amount, order_status, order_date) VALUES (?, ?, ?, ?, ?)";
+            jdbcTemplate.update(sql, entity.itemId, entity.name, entity.amount, entity.orderStatus.name(), entity.orderDate);
     }
 
     @Override
     public void updateOrder(ExampleOrder order) {
         ExampleOrderEntity entity = ExampleOrderEntity.of(order);
         //entity.update();
+            String sql = "UPDATE example_order SET name = ?, amount = ?, order_status = ?, order_date = ? WHERE id = ?";
+            jdbcTemplate.update(sql);
+
+    }
+
+    @Override
+    public void deleteOrder(int id) {
+        String sql = "DELETE FROM example_order WHERE id = ?";
+        jdbcTemplate.update(sql, id);
     }
 
     @Override

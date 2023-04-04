@@ -9,6 +9,8 @@ public interface OrderRepository {
 
     void updateOrder(ExampleOrder order);
 
+    void deleteOrder(int id);
+
     ExampleOrder getOrder(int id);
     List<ExampleOrder> getAllOrder();
 }

@@ -54,6 +54,12 @@ public class OrderController {
         return request;
     }
 
+    @DeleteMapping(value = "/{orderId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int orderId) {
+        service.deleteOrder(orderId);
+    }
+
     public OrderController(OrderService service) {
         this.service = service;
     }
