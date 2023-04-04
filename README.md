@@ -52,9 +52,25 @@ On client side we provide UI to let user act with screen
 
 On the server side we just receive an action to make a record to save data permanently on our Storage which can be any type (In this project we will use Postgres Database as our storage)
 
-### Exercise
+### Tutorial
 
-let's go to `beginner` folder `ui` folder then open `index.html`
+first let's start our erver
+left click on DemoApplication.java -> `Run DemoApplication.main()` or `実行`
+in the terminal you might see something like `Tomcat started on port(s): 8080 (http)`
+that's means it work!
+
+nowlet's go to `beginner` folder `ui` folder then open `index.html`
 there's two button on the site let's click it and see what's it return to us
 
 let's look into `index.js`
+and learn something from there HINT:
+message from JAVA should you should look into `/beginner/demo/demo/src/main/java/controller.HelloController.java`  
+see the `@RequestMapping` that point to `"/hello"` and now see the function in javascript where do we call
+
+### Exercise
+
+in `index.js` try to make `helloExercise()` to hook up the another from message from `ExerciseController.java`
+
+#### Learn more
+
+- learn more about async await [here](https://tcd-theme.com/2021/09/javascript-asyncawait.html)
