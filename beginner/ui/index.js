@@ -18,10 +18,10 @@ function renderOrders(ordersJson) {
     throw new Error("Could not find orders element");
   }
   orders.innerHTML = "";
+  const orderDiv = document.createElement("table");
+  orderDiv.innerHTML =
+    "<th>Order ID</th><th>Order Name</th><th>Order Amount</th><th>Order Status</th><th>Order Date</th>";
   ordersJson.orders.forEach((order) => {
-    const orderDiv = document.createElement("table");
-    orderDiv.innerHTML =
-      "<th>Order ID</th><th>Order Name</th><th>Order Amount</th><th>Order Status</th><th>Order Date</th>";
     orderDiv.innerHTML += `
     <tr>
       <td>${order.id}</td>
@@ -29,10 +29,28 @@ function renderOrders(ordersJson) {
       <td>${order.amount}</td>
       <td>${order.orderStatus}</td>
       <td>${order.orderDate}</td>
+      <td><button onclick="handlerDeleteOrder(${order.id})">Delete</button></td>
     </th>
     `;
     orders.appendChild(orderDiv);
   });
+}
+
+function OrderDeleteComponent(id) {
+  const deleteButton = document.createElement("button");
+  deleteButton.onclick = () => handlerDeleteOrder(id);
+  deleteButton.innerText = "Delete";
+  return deleteButton;
+}
+
+async function handlerDeleteOrder(id) {
+  const response = await fetch(`http://localhost:8080/orders/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) {
+    throw new Error("Could not delete order");
+  }
+  fetchOrders();
 }
 
 async function handlerRegisterOrder(event) {
