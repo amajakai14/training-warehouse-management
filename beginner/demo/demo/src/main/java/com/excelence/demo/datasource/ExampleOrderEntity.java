@@ -5,11 +5,8 @@ import com.excelence.demo.model.OrderStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
 
 public class ExampleOrderEntity {
     @Autowired
@@ -23,7 +20,12 @@ public class ExampleOrderEntity {
 
     public void create() {
         String sql = "INSERT INTO example_order(item_id, name, amount, order_status, order_date) VALUES (?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, itemId, name, amount, orderStatus.name(), orderDate);
+        assert orderDate != null;
+        assert orderStatus != null;
+        assert name != null;
+        assert amount > 0;
+        assert itemId > 0;
+        int update = jdbcTemplate.update(sql, itemId, name, amount, orderStatus.name(), orderDate.toString());
     }
 
     public void update() {
@@ -33,12 +35,12 @@ public class ExampleOrderEntity {
 
     public static ExampleOrderEntity of(ExampleOrder order) {
         return new ExampleOrderEntity(
-            order.id(),
-            order.itemId(),
-            order.name(),
-            order.amount(),
-            order.orderStatus(),
-            order.orderDate()
+                order.id(),
+                order.itemId(),
+                order.name(),
+                order.amount(),
+                order.orderStatus(),
+                order.orderDate()
         );
     }
 

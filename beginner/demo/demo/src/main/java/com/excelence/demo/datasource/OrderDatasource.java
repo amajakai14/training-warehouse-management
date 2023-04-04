@@ -7,9 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+
+import static java.util.stream.Collectors.toList;
 
 @Repository
 public class OrderDatasource implements OrderRepository {
@@ -25,7 +29,7 @@ public class OrderDatasource implements OrderRepository {
     @Override
     public void updateOrder(ExampleOrder order) {
         ExampleOrderEntity entity = ExampleOrderEntity.of(order);
-        entity.update();
+        //entity.update();
     }
 
     @Override
@@ -37,19 +41,24 @@ public class OrderDatasource implements OrderRepository {
     }
 
     private ExampleOrder toModel(Map<String, Object> record) {
+        Date date = (Date) record.get("order_date");
         return new ExampleOrder(
                 (int) record.get("id"),
                 (int) record.get("item_id"),
                 (String) record.get("name"),
                 (int) record.get("amount"),
                 OrderStatus.valueOf((String) record.get("order_status")),
-                (LocalDate) record.get("order_date")
+                date.toLocalDate()
         );
     }
 
 
     @Override
     public List<ExampleOrder> getAllOrder() {
-        return null;
+        String sql = "SELECT * FROM example_order";
+        List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
+        return records.stream()
+                .map(this::toModel)
+                .collect(toList());
     }
 }

@@ -4,10 +4,15 @@ import com.excelence.demo.model.ExampleOrder;
 import com.excelence.demo.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OrderService {
     private final OrderRepository orderRepository;
 
+    public List<ExampleOrder> getAllOrder() {
+        return orderRepository.getAllOrder();
+    }
     public ExampleOrder getOrderById(int orderId) {
         return orderRepository.getOrder(orderId);
     }
