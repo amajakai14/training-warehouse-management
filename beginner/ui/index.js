@@ -1,0 +1,19 @@
+function helloFromJavascript() {
+  alert("hello from javascript");
+}
+
+async function helloFromJava() {
+  //this allow us to talk to the server by fetching to their available endpoint
+  const response = await fetch("http://localhost:8080/hello");
+  if (!response.ok) {
+    alert("something wrong! have you run the server yet?");
+    return;
+  }
+  const text = await response.text();
+  alert(text);
+}
+
+//make this alert to show up the message from the server
+async function helloExercise() {
+  alert("I'm not getting a message!");
+}
