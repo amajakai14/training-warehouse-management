@@ -31,7 +31,9 @@ there might be some steps that you have to follow along depend on what OS you ar
   - edit system environment variable `JAVA_HOME` make it point to the folder of java11 you've installed
   - edit system environment variable `PATH` make it point to the `bin` folder in the folder of java11 you've installed
     - click create to add a new column for path
-
+- open intellij
+  - open -> go to the folder where you clone this repository
+  - files -> Project Structure -> SDK -> select sdk version 11 from  the one you downloaded above
 #### Start up database
 
 before this step Docker should be ready to use
