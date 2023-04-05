@@ -10,9 +10,11 @@ there might be some steps that you have to follow along depend on what OS you ar
 
 - Install `Git` from [HERE](https://git-scm.com/downloads)
 - Install `Fork` from [HERE](https://git-fork.com/)
+  - [How to use fork](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
 - Install `JDK11` from [HERE](https://www.oracle.com/java/technologies/downloads/#java11) **remember what folder you installed**
 - Install `Intellij` from [HERE](https://www.jetbrains.com/idea/download/#section=windows)
 - Install `VSCode` from [HERE](https://code.visualstudio.com/)
+  - (optional) some extension install [おすすめ](https://qiita.com/KNR109/items/5f933df1292564e6dc70)
 - Install `Docker Desktop` from [HERE](https://docs.docker.com/desktop/install/windows-install/)
   - There might a lot of steps here you may need some help or visit this [site](https://www.kagoya.jp/howto/cloud/container/wsl2_docker/)
 
@@ -54,11 +56,16 @@ On the server side we just receive an action to make a record to save data perma
 
 ### Tutorial
 
+for a better experience I recommend edit Java code in `IntelliJ` and edit `html javascript css` in VScode
+
 first let's start our erver
+open intellij -> open -> training-warehouse-management
+
 left click on DemoApplication.java -> `Run DemoApplication.main()` or `実行`
 in the terminal you might see something like `Tomcat started on port(s): 8080 (http)`
 that's means it work!
 
+open vscode -> open -> traning-warehouse-management
 nowlet's go to `beginner` folder `ui` folder then open `index.html`
 there's two button on the site let's click it and see what's it return to us
 
