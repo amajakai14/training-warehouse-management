@@ -1,9 +1,9 @@
 package com.excelence.demo.repository;
 
-import com.excelence.demo.model.ExampleOrder;
+import com.excelence.demo.model.ExampleMenu;
 
 import java.util.List;
 
 public interface MenuRepository {
-    List<ExampleOrder> getAllOrder();
+    List<ExampleMenu> getAllMenu();
 }
