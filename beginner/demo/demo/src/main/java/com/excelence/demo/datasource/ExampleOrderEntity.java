@@ -1,0 +1,38 @@
+package com.excelence.demo.datasource;
+
+import com.excelence.demo.model.ExampleOrder;
+import com.excelence.demo.model.OrderStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import java.sql.Date;
+import java.time.LocalDate;
+
+public class ExampleOrderEntity {
+    final int id;
+    final int itemId;
+    final String name;
+    final int amount;
+    final OrderStatus orderStatus;
+    final LocalDate orderDate;
+
+    public static ExampleOrderEntity of(ExampleOrder order) {
+        return new ExampleOrderEntity(
+                order.id(),
+                order.itemId(),
+                order.name(),
+                order.amount(),
+                order.orderStatus(),
+                order.orderDate()
+        );
+    }
+
+    public ExampleOrderEntity(int id, int itemId, String name, int amount, OrderStatus orderStatus, LocalDate orderDate) {
+        this.id = id;
+        this.itemId = itemId;
+        this.name = name;
+        this.amount = amount;
+        this.orderStatus = orderStatus;
+        this.orderDate = orderDate;
+    }
+}
