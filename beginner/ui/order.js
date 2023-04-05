@@ -2,6 +2,9 @@ function toAbout() {
   window.location.href = "about.html";
 }
 
+document.addEventListener("DOMContentLoaded", fetchOrders());
+document.removeEventListener("DOMContentLoaded", fetchOrders());
+
 async function fetchOrders() {
   const orders = await fetch("http://localhost:8080/orders");
   if (!orders.ok) {
@@ -107,6 +110,7 @@ async function handleUpdateOrder(event, id) {
   const formData = new FormData(form);
   const order = {
     name: formData.get("name"),
+    itemId: formData.get("itemId"),
     amount: formData.get("amount"),
     orderStatus: formData.get("orderStatus"),
     orderDate: formData.get("orderDate"),

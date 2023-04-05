@@ -32,9 +32,10 @@ public class OrderDatasource implements OrderRepository {
     @Override
     public void updateOrder(ExampleOrder order) {
         ExampleOrderEntity entity = ExampleOrderEntity.of(order);
-        String sql = "UPDATE example_order SET name = ?, amount = ?, order_status = ?, order_date = ? WHERE id = ?";
+        String sql = "UPDATE example_order SET item_id = ?,name = ?, amount = ?, order_status = ?, order_date = ? WHERE id = ?";
         jdbcTemplate.update(
                 sql,
+                entity.itemId,
                 entity.name,
                 entity.amount,
                 entity.orderStatus.name(),
