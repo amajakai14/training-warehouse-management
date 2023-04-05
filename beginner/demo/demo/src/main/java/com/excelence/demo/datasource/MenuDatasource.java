@@ -18,11 +18,11 @@ public class MenuDatasource implements MenuRepository {
 
     //exercise to write sql query to get all menu
     @Override
-    public List<ExampleOrder> getAllOrder() {
+    public List<ExampleMenu> getAllMenu() {
         return null;
     }
 
-    //Hint how to convert Record Map you get from Database to Our declared Model
+    //Hint this method will convert Record Map you get from Database to Our declared Model
     private ExampleMenu toModel(Map<String, Object> record) {
         return new ExampleMenu(
                 (int) record.get("id"),
