@@ -19,42 +19,12 @@ public class OrderDatasource implements OrderRepository {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public void insertOrder(ExampleOrder order) {
-        ExampleOrderEntity entity = ExampleOrderEntity.of(order);
-        create(entity);
-    }
-
-    private void create(ExampleOrderEntity entity) {
-        String sql = "INSERT INTO example_order(item_id, name, amount, order_status, order_date) VALUES (?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, entity.itemId, entity.name, entity.amount, entity.orderStatus.name(), entity.orderDate);
-    }
-
-    @Override
-    public void updateOrder(ExampleOrder order) {
-        ExampleOrderEntity entity = ExampleOrderEntity.of(order);
-        String sql = "UPDATE example_order SET name = ?, amount = ?, order_status = ?, order_date = ? WHERE id = ?";
-        jdbcTemplate.update(
-                sql,
-                entity.name,
-                entity.amount,
-                entity.orderStatus.name(),
-                entity.orderDate,
-                entity.id
-        );
-    }
-
-    @Override
-    public void deleteOrder(int id) {
-        String sql = "DELETE FROM example_order WHERE id = ?";
-        jdbcTemplate.update(sql, id);
-    }
-
-    @Override
-    public ExampleOrder getOrder(int id) {
-        String sql = "SELECT * FROM example_order WHERE id = ?";
-        List<Map<String, Object>> records = jdbcTemplate.queryForList(sql, id);
-        if (records.isEmpty()) return ExampleOrder.empty();
-        return toModel(records.get(0));
+    public List<ExampleOrder> getAllOrder() {
+        String sql = "SELECT * FROM example_order";
+        List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
+        return records.stream()
+                .map(this::toModel)
+                .collect(toList());
     }
 
     private ExampleOrder toModel(Map<String, Object> record) {
@@ -67,15 +37,5 @@ public class OrderDatasource implements OrderRepository {
                 OrderStatus.valueOf((String) record.get("order_status")),
                 date.toLocalDate()
         );
-    }
-
-
-    @Override
-    public List<ExampleOrder> getAllOrder() {
-        String sql = "SELECT * FROM example_order";
-        List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
-        return records.stream()
-                .map(this::toModel)
-                .collect(toList());
     }
 }

@@ -13,22 +13,6 @@ public class OrderService {
     public List<ExampleOrder> getAllOrder() {
         return orderRepository.getAllOrder();
     }
-    public ExampleOrder getOrderById(int orderId) {
-        return orderRepository.getOrder(orderId);
-    }
-
-    public void createOrder(ExampleOrder order) {
-        orderRepository.insertOrder(order);
-    }
-
-    public void updateOrder(ExampleOrder order) {
-        orderRepository.updateOrder(order);
-    }
-
-    public void deleteOrder(int orderId) {
-        orderRepository.deleteOrder(orderId);
-    }
-
     public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
