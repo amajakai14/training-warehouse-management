@@ -1,14 +1,14 @@
-async function fetchOrders() {
+async function fetchMenus() {
   const menus = await fetch("http://localhost:8080/menus");
   if (!menus.ok) {
     throw new Error("Could not fetch menus");
   }
   const menusJson = await menus.json();
   console.log(menusJson);
-  renderOrders(menusJson);
+  renderMenus(menusJson);
 }
 
-function renderOrders(menusJson) {
+function renderMenus(menusJson) {
   const menus = document.getElementById("menu-list");
   if (!menus) {
     throw new Error("Could not find orders element");
