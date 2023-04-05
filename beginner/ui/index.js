@@ -15,5 +15,7 @@ async function helloFromJava() {
 
 //make this alert to show up the message from the server
 async function helloExercise() {
-  alert("I'm not getting a message!");
+  const response = await fetch("http://localhost:8080/exercise");
+  const text = await response.text();
+  alert(text);
 }
