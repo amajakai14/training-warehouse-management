@@ -27,6 +27,41 @@ public class OrderDatasource implements OrderRepository {
                 .collect(toList());
     }
 
+    /*
+     *  It's a good practice to separate the logic of data from database apart from model
+     *  in this case, we can just use ExampleOrder Model to represent the data
+     *  but there might be the case that we design model differently from database
+     *  then we can use Entity to represent the data from database
+     */
+    @Override
+    public void insertOrder(ExampleOrder order) {
+        ExampleOrderEntity entity = ExampleOrderEntity.of(order);
+        String sql = "INSERT INTO example_order(item_id, name, amount, order_status, order_date) VALUES (?, ?, ?, ?, ?)";
+        jdbcTemplate.update(
+                sql,
+                entity.itemId,
+                entity.name,
+                entity.amount,
+                entity.orderStatus.name(),
+                entity.orderDate);
+    }
+    /*
+     *  Without ExampleOrderEntity class we can do update like this
+     *  jdbcTemplate.update(sql,
+     *  order.itemId,
+     *  order.name,
+     *  order.amount,
+     *  order.orderStatus.name(),
+     *  order.orderDate);
+     */
+
+    /*
+     *  a Helper function to Map result from database to ExampleOrder Model
+     *  try play with it to understand how Map works
+     *  (int) record.get("id") is called casting
+     *  it's a way to convert one type to another
+     *  in this case we convert Object to int
+     */
     private ExampleOrder toModel(Map<String, Object> record) {
         Date date = (Date) record.get("order_date");
         return new ExampleOrder(

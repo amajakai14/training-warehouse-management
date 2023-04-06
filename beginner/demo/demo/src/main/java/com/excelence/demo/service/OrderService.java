@@ -13,6 +13,12 @@ public class OrderService {
     public List<ExampleOrder> getAllOrder() {
         return orderRepository.getAllOrder();
     }
+
+
+    public void createOrder(ExampleOrder order) {
+        orderRepository.insertOrder(order);
+    }
+
     public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }

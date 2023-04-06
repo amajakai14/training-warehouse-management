@@ -1,5 +1,6 @@
 package com.excelence.demo.controller.order;
 
+import com.excelence.demo.controller.order.request.ExampleOrderRequest;
 import com.excelence.demo.controller.order.response.OrdersResponse;
 import com.excelence.demo.model.ExampleOrder;
 import com.excelence.demo.model.ValidateResult;
@@ -20,6 +21,24 @@ public class OrderController {
     public OrdersResponse getAll() {
         List<ExampleOrder> orders = service.getAllOrder();
         return new OrdersResponse(orders);
+    }
+
+    @PostMapping(produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    /*
+     * @RequestBody will map the request body from client side
+     * to be Any Class you want it to behave
+     * in this case, it will map to ExampleOrderRequest
+     * then we add a logic to validate the request if it is not valid
+     * we send back an error result with status code 400 and custom message
+     */
+    public void create(@RequestBody ExampleOrderRequest request) {
+        ValidateResult validate = request.validate();
+        if (!validate.ok()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, validate.errorMessage());
+        }
+        service.createOrder(request.toExampleOrder());
     }
 
     public OrderController(OrderService service) {

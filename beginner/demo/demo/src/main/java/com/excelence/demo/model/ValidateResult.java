@@ -17,7 +17,7 @@ public class ValidateResult {
     }
 
     public static ValidateResult failed(String text) {
-        return new ValidateResult(true, text);
+        return new ValidateResult(false, text);
     }
 
     private ValidateResult(boolean ok, String message) {
