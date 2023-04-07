@@ -1,14 +1,14 @@
-async function fetchMenus() {
+async function fetchOrders() {
   const orders = await fetch("http://localhost:8080/orders");
   if (!orders.ok) {
     throw new Error("Could not fetch orders");
   }
   const ordersJson = await orders.json();
   console.log(ordersJson);
-  renderMenus(ordersJson);
+  renderOrders(ordersJson);
 }
 
-function renderMenus(ordersJson) {
+function renderOrders(ordersJson) {
   const orders = document.getElementById("order-list");
   if (!orders) {
     throw new Error("Could not find orders element");
@@ -16,11 +16,12 @@ function renderMenus(ordersJson) {
   orders.innerHTML = "";
   const orderDiv = document.createElement("table");
   orderDiv.innerHTML =
-    "<th>Order ID</th><th>Order Name</th><th>Order Amount</th><th>Order Status</th><th>Order Date</th>";
+    "<th>Order ID</th><th>Menu Id</th><th>Order Name</th><th>Order Amount</th><th>Order Status</th><th>Order Date</th>";
   ordersJson.orders.forEach((order) => {
     orderDiv.innerHTML += `
     <tr>
       <td>${order.id}</td>
+      <td>${order.itemId}</td>
       <td>${order.name}</td>
       <td>${order.amount}</td>
       <td>${order.orderStatus}</td>
