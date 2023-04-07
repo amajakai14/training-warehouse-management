@@ -46,7 +46,7 @@ there might be some steps that you have to follow along depend on what OS you ar
 
 before this step Docker should be ready to use
 
-- `./beginner/demo/demo/local/start.sh`
+- run this command on terminal `./beginner/demo/demo/local/start.sh`
 
 ## Server Side and Client Side
 
@@ -66,15 +66,15 @@ On the server side we just receive an action to make a record to save data perma
 
 for a better experience I recommend edit Java code in `IntelliJ` and edit `html javascript css` in VScode
 
-first let's start our erver
+first let's start our server
 open intellij -> open -> training-warehouse-management
 
 left click on DemoApplication.java -> `Run DemoApplication.main()` or `実行`
 in the terminal you might see something like `Tomcat started on port(s): 8080 (http)`
 that's means it work!
 
-open vscode -> open -> traning-warehouse-management
-nowlet's go to `beginner` folder `ui` folder then open `index.html`
+open vscode -> open -> training-warehouse-management
+now let's go to `beginner` folder `ui` folder then open `index.html`
 there's two button on the site let's click it and see what's it return to us
 
 let's look into `index.js`
