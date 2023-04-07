@@ -9,6 +9,20 @@ before this step Docker should be ready to use
 - `./beginner/demo/demo/local/start.sh`
   - if there is something wrong with database just run this command it will reset database data
 
+### Install
+
+to see what inside our Database we can use GUI Application from below
+
+- Install `PGAdmin4` from [HERE](https://www.pgadmin.org/download/)
+  - [How to Install](https://qiita.com/pyon_kiti_jp/items/01d6150e46bd66be29f0)
+- After installed
+  - right click server
+  - -> on `General` tab add NAME:warehouse
+  - -> on `Connection` tab add HOSTname/address:`localhost`, Port:`5432`, Maintenance database: `warehouse`, Username: `warehouseuser`, Password:`warehousepassword`, -> savepassword: click `ON`
+- start the Java application
+  - in PGAdmin warehouse server -> databases -> `warehouse` -> `Schemas` -> `Tables` -> `example_???` tables will be shown
+  - use double click -> `View/Edit Data` -> `All Rows` -> you will see some data that were prepared we will use those data in the tutorial
+
 ### Tutorial
 
 run our `DemoApplication` once again
