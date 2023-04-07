@@ -11,7 +11,11 @@ there might be some steps that you have to follow along depend on what OS you ar
 - Install `Git` from [HERE](https://git-scm.com/downloads)
 - Install `Fork` from [HERE](https://git-fork.com/)
   - [How to use fork](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
-- Install `JDK11` from [HERE](https://www.oracle.com/java/technologies/downloads/#java11) **remember what folder you installed**
+- Install `JDK11` from [HERE](https://www.oracle.com/java/technologies/downloads/#java11) **remember where did you install into folder**
+  - **DO NOT INSTALL JDK FROM OTHER PLACE ELSE THIS PROJECT MIGHT NOT BE ABLE TO RUN WITHOUT KNOWING A CUSTOM SETTINGS**
+  - Register Account
+  - Download jdk11
+  - setup environment (see below)
 - Install `Intellij` from [HERE](https://www.jetbrains.com/idea/download/#section=windows)
 - Install `VSCode` from [HERE](https://code.visualstudio.com/)
   - (optional) some extension install [おすすめ](https://qiita.com/KNR109/items/5f933df1292564e6dc70)
@@ -39,7 +43,7 @@ there might be some steps that you have to follow along depend on what OS you ar
     - click create to add a new column for path
 
 - open intellij
-  - open -> go to the folder where you clone this repository
+  - File -> New Project -> Project from existing source -> `beginner/demo/demo` -> import project from external model -> `Gradle`
   - files -> Project Structure -> SDK -> select sdk version 11 from the one you downloaded above
 
 #### Start up database
@@ -67,11 +71,12 @@ On the server side we just receive an action to make a record to save data perma
 for a better experience I recommend edit Java code in `IntelliJ` and edit `html javascript css` in VScode
 
 first let's start our server
-open intellij -> open -> training-warehouse-management
+**Done Set New project before open this way** open intellij -> open -> training-warehouse-management -> beginner -> demo -> demo
 
 left click on DemoApplication.java -> `Run DemoApplication.main()` or `実行`
 in the terminal you might see something like `Tomcat started on port(s): 8080 (http)`
 that's means it work!
+go to browser and type `localhost:8080/hello` you should see the message
 
 open vscode -> open -> training-warehouse-management
 now let's go to `beginner` folder `ui` folder then open `index.html`
