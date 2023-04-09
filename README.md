@@ -13,11 +13,12 @@ there might be some steps that you have to follow along depend on what OS you ar
 - Install `Fork` from [HERE](https://git-fork.com/)
   - [How to use fork](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
 - Install `JDK11` from [HERE](https://www.oracle.com/java/technologies/downloads/#java11) **remember where did you install into folder**
-  - **DO NOT INSTALL JDK FROM OTHER PLACE ELSE THIS PROJECT MIGHT NOT BE ABLE TO RUN WITHOUT KNOWING A CUSTOM SETTINGS**
+  - **DO NOT INSTALL JDK FROM OTHER PLACE ELSE THERE MIGHT BE A DIFFICULTIES INSTALLING THIS PROJECT**
   - Register Account
   - Download jdk11
   - setup environment (see below)
 - Install `Intellij` from [HERE](https://www.jetbrains.com/idea/download/#section=windows)
+  - (faq)[https://github.com/amajakai14/training-warehouse-management/tree/step1-client-and-server/faq]
 - Install `VSCode` from [HERE](https://code.visualstudio.com/)
   - (optional) some extension install [おすすめ](https://qiita.com/KNR109/items/5f933df1292564e6dc70)
     - what i would recommend is
