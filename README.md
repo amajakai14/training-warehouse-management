@@ -8,7 +8,8 @@ there might be some steps that you have to follow along depend on what OS you ar
 
 #### Install tools
 
-- Install `Git` from [HERE](https://git-scm.com/downloads)
+- Install `Git` from [HERE](https://git-scm.com/downloads) 
+  - also `Git Bash`
 - Install `Fork` from [HERE](https://git-fork.com/)
   - [How to use fork](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
 - Install `JDK11` from [HERE](https://www.oracle.com/java/technologies/downloads/#java11) **remember where did you install into folder**
@@ -28,7 +29,7 @@ there might be some steps that you have to follow along depend on what OS you ar
 
 #### Setup environment
 
-- setup system enviroment for java
+- setup system environment for java
 - japanese version
   - 環境変数を設定する
     - システムの環境変数に、JDK のパスを指定する
@@ -50,7 +51,9 @@ there might be some steps that you have to follow along depend on what OS you ar
 
 before this step Docker should be ready to use
 
-- run this command on terminal `./beginner/demo/demo/local/start.sh`
+- run `git bash` terminal 
+  -  `cd` to the folder where you cloned this project
+  - run command `./beginner/demo/demo/local/start.sh`
 
 ## Server Side and Client Side
 
