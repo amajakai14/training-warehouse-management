@@ -18,7 +18,7 @@ there might be some steps that you have to follow along depend on what OS you ar
   - Download jdk11
   - setup environment (see below)
 - Install `Intellij` from [HERE](https://www.jetbrains.com/idea/download/#section=windows)
-  - (faq)[https://github.com/amajakai14/training-warehouse-management/tree/step1-client-and-server/faq]
+  - [faq](https://github.com/amajakai14/training-warehouse-management/tree/step1-client-and-server/faq)
 - Install `VSCode` from [HERE](https://code.visualstudio.com/)
   - (optional) some extension install [おすすめ](https://qiita.com/KNR109/items/5f933df1292564e6dc70)
     - what i would recommend is
