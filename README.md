@@ -36,6 +36,7 @@ We will talk about it later
 #### Learn more
 
 - learn more about RESTapi [here](https://tech.012grp.co.jp/entry/rest_api_basics)
+- learn more about CRUD function [here](https://qiita.com/fukuma_biz/items/a9e8d18467fe3e04068e)
 - learn more about fetch() function [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - learn more about json [here](https://cloudapi.kddi-web.com/magazine/json-javascript-object-notation)
 - learn more about http status [here](https://digital-marketing.jp/seo/http-status-code/)
