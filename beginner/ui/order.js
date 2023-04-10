@@ -61,6 +61,11 @@ async function handleRegisterOrder(event) {
   if (!response.ok) {
     const error = await response.json();
     console.error(error);
+    return;
   }
+
+  /*
+   * if the response is ok, we fetch the orders again
+   */
   fetchOrders();
 }
