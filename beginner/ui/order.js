@@ -3,7 +3,6 @@
  * so you dont need to click the button to show anymore
  */
 document.addEventListener("DOMContentLoaded", fetchOrders());
-document.removeEventListener("DOMContentLoaded", fetchOrders());
 
 async function fetchOrders() {
   const orders = await fetch("http://localhost:8080/orders");
