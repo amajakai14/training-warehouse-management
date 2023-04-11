@@ -1,3 +1,10 @@
+/*
+ * after DOM is loaded, we call the fetchOrders function
+ * so you dont need to click the button to show anymore
+ */
+document.addEventListener("DOMContentLoaded", fetchOrders());
+document.removeEventListener("DOMContentLoaded", fetchOrders());
+
 async function fetchOrders() {
   const orders = await fetch("http://localhost:8080/orders");
   if (!orders.ok) {
@@ -8,6 +15,9 @@ async function fetchOrders() {
   renderOrders(ordersJson);
 }
 
+/*
+ * we add a button to the table when we called the renderOrders function
+ */
 function renderOrders(ordersJson) {
   const orders = document.getElementById("order-list");
   if (!orders) {
@@ -35,9 +45,6 @@ function renderOrders(ordersJson) {
   });
 }
 async function handleRegisterOrder(event) {
-  /*
-   * preventDefault() will stop the browser reloading the page
-   */
   event.preventDefault();
   const form = event.target.form;
   const formData = new FormData(form);
@@ -49,11 +56,6 @@ async function handleRegisterOrder(event) {
     orderDate: formData.get("orderDate"),
   };
 
-  /*
-   * see that we use POST method when fetch here to match what server is expecting
-   * and we declare what data we are sending in the headers
-   * in this case we are sending JSON data
-   */
   const response = await fetch("http://localhost:8080/orders", {
     method: "POST",
     headers: {
@@ -67,9 +69,6 @@ async function handleRegisterOrder(event) {
     return;
   }
 
-  /*
-   * if the response is ok, we fetch the orders again
-   */
   fetchOrders();
 }
 
@@ -100,6 +99,7 @@ async function renderOrder(id) {
     <button type="submit" onclick="handleUpdateOrder(event, ${order.id})">Update</button>
   </form>
   `;
+  document.getElementById("myModal").style.display = "block";
 }
 
 async function handleUpdateOrder(event, id) {
@@ -129,14 +129,4 @@ async function handleUpdateOrder(event, id) {
     await fetchOrders();
     document.getElementById("myModal").style.display = "none";
   }
-}
-
-async function handleDeleteOrder(id) {
-  const response = await fetch(`http://localhost:8080/orders/${id}`, {
-    method: "DELETE",
-  });
-  if (!response.ok) {
-    throw new Error("Could not delete order");
-  }
-  fetchOrders();
 }
