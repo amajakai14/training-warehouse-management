@@ -14,9 +14,17 @@ public class OrderService {
         return orderRepository.getAllOrder();
     }
 
-
     public void createOrder(ExampleOrder order) {
         orderRepository.insertOrder(order);
+    }
+
+    public ExampleOrder getOrderById(int orderId) {
+        return orderRepository.getOrder(orderId);
+    }
+
+
+    public void updateOrder(ExampleOrder order) {
+        orderRepository.updateOrder(order);
     }
 
     public OrderService(OrderRepository orderRepository) {

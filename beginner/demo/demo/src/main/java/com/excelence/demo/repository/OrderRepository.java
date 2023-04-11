@@ -8,4 +8,8 @@ public interface OrderRepository {
     List<ExampleOrder> getAllOrder();
 
     void insertOrder(ExampleOrder order);
+
+    void updateOrder(ExampleOrder order);
+
+    ExampleOrder getOrder(int id);
 }

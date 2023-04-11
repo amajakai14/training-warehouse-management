@@ -25,13 +25,6 @@ public class OrderController {
 
     @PostMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    /*
-     * @RequestBody will map the request body from client side
-     * to be Any Class you want it to behave
-     * in this case, it will map to ExampleOrderRequest
-     * then we add a logic to validate the request if it is not valid
-     * we send back an error result with status code 400 and custom message
-     */
     public void create(@RequestBody ExampleOrderRequest request) {
         ValidateResult validate = request.validate();
         if (!validate.ok()) {
@@ -39,6 +32,29 @@ public class OrderController {
                     HttpStatus.BAD_REQUEST, validate.errorMessage());
         }
         service.createOrder(request.toExampleOrder());
+    }
+
+    /*
+     * In this lesson, we will add a new API to get order by id and how update the order.
+     * the fundamental if the SAME as the create order API.
+     * GET for get order by id
+     * PUT for update order
+     */
+    @GetMapping(value = "/{orderId}", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public ExampleOrder get(@PathVariable int orderId) {
+        return service.getOrderById(orderId);
+    }
+
+    @PutMapping(value = "/{orderId}", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public void update(@PathVariable int orderId,@RequestBody ExampleOrderRequest request) {
+        ValidateResult validate = request.validate();
+        if (!validate.ok()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, validate.errorMessage());
+        }
+        service.updateOrder(request.toExampleOrder(orderId));
     }
 
     public OrderController(OrderService service) {
