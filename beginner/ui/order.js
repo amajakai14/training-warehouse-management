@@ -37,6 +37,7 @@ function renderOrders(ordersJson) {
       <td>${order.orderDate}</td>
       <td>
       <button onclick="renderOrder(${order.id})">Edit</button>
+      <button onclick="handleDeleteOrder(${order.id})">Delete</button>
       </td>
     </th>
     `;
@@ -128,4 +129,17 @@ async function handleUpdateOrder(event, id) {
     await fetchOrders();
     document.getElementById("myModal").style.display = "none";
   }
+}
+
+/*
+ * Exercise Implement the Java delete Controller
+ */
+async function handleDeleteOrder(id) {
+  const response = await fetch(`http://localhost:8080/orders/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) {
+    throw new Error("Could not delete order");
+  }
+  fetchOrders();
 }

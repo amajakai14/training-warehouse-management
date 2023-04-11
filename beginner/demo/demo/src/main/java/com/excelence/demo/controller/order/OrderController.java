@@ -34,12 +34,6 @@ public class OrderController {
         service.createOrder(request.toExampleOrder());
     }
 
-    /*
-     * In this lesson, we will add a new API to get order by id and how update the order.
-     * the fundamental if the SAME as the create order API.
-     * GET for get order by id
-     * PUT for update order
-     */
     @GetMapping(value = "/{orderId}", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public ExampleOrder get(@PathVariable int orderId) {
@@ -56,6 +50,8 @@ public class OrderController {
         }
         service.updateOrder(request.toExampleOrder(orderId));
     }
+
+    //Add delete method
 
     public OrderController(OrderService service) {
         this.service = service;

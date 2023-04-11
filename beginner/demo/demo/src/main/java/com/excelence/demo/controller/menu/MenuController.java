@@ -24,8 +24,6 @@ public class MenuController {
         return new MenusResponse(menus);
     }
 
-    //Add your code here
-
     public MenuController(MenuService service) {
         this.service = service;
     }
