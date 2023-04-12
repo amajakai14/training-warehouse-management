@@ -7,8 +7,20 @@
     <title>Document</title>
   </head>
   <body>
-    <button onclick="fetchMenus()">get menus</button>
+    <button onclick="fetchMenus()">
+      get menus
+    </button>
     <div id="menu-list"></div>
+    <div style="margin-top: 2rem; color: red">
+      Try to register a new menu and see the result in the console
+    </div>
+    <form>
+      <input name="id" type="number" />
+      <input name="name" />
+      <button type="submit" onclick="handleRegisterMenu(event)">
+        resister new Menu
+      </button>
+    </form>
   </body>
   <script src="./exercise.js"></script>
 </html>
