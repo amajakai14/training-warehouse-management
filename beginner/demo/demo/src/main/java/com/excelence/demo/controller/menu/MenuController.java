@@ -1,7 +1,7 @@
 package com.excelence.demo.controller.menu;
 
 import com.excelence.demo.controller.menu.response.MenusResponse;
-import com.excelence.demo.controller.order.request.ExampleOrderRequest;
+import com.excelence.demo.controller.menu.request.ExampleMenuRequest;
 import com.excelence.demo.controller.order.response.OrdersResponse;
 import com.excelence.demo.model.ExampleMenu;
 import com.excelence.demo.model.ValidateResult;
@@ -26,9 +26,21 @@ public class MenuController {
         return new MenusResponse(menus);
     }
 
-    public void create() {
-        service.CreateMenu(ExampleMenu );
+    @PostMapping(produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void create(@RequestBody ExampleMenuRequest request) {
+        ValidateResult validate = request.validate();
+        if (!validate.ok()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, validate.errorMessage());
+        }
+        service.CreateMenu(request.toExampleMenu());
     }
+
+
+
+
+
     public MenuController(MenuService service) {
         this.service = service;
     }

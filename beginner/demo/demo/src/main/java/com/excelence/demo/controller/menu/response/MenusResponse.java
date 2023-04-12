@@ -9,5 +9,7 @@ public class MenusResponse {
     //TODO: Add what is needed to be return here
     public List<ExampleMenu> menus;
 
-    public MenusResponse(List<ExampleMenu> menus) { this.menus = menus;}
+    public MenusResponse(List<ExampleMenu> menus) {
+        this.menus = menus;
+    }
 }
