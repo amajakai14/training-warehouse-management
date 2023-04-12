@@ -1,3 +1,4 @@
+//get orderボタンを押したときの挙動
 async function fetchOrders() {
   const orders = await fetch("http://localhost:8080/orders");
   if (!orders.ok) {
@@ -7,7 +8,7 @@ async function fetchOrders() {
   console.log(ordersJson);
   renderOrders(ordersJson);
 }
-
+//表の表示
 function renderOrders(ordersJson) {
   const orders = document.getElementById("order-list");
   if (!orders) {
@@ -31,9 +32,11 @@ function renderOrders(ordersJson) {
     orders.appendChild(orderDiv);
   });
 }
+//フォームに入力して送信ボタンを押したときの挙動
 async function handleRegisterOrder(event) {
   /*
    * preventDefault() will stop the browser reloading the page
+     preventDefault()は、ブラウザがページを再読み込みするのを阻止します。
    */
   event.preventDefault();
   const form = event.target.form;
@@ -50,6 +53,10 @@ async function handleRegisterOrder(event) {
    * see that we use POST method when fetch here to match what server is expecting
    * and we declare what data we are sending in the headers
    * in this case we are sending JSON data
+   * ここでは、サーバーが期待しているものと一致させるために、
+   * フェッチ時にPOSTメソッドを使用し、
+   * ヘッダーで送信するデータを宣言しています
+   * (この場合、JSONデータを送信していることがわかります)。
    */
   const response = await fetch("http://localhost:8080/orders", {
     method: "POST",
@@ -66,6 +73,7 @@ async function handleRegisterOrder(event) {
 
   /*
    * if the response is ok, we fetch the orders again
+   *レスポンスがOKであれば、再度注文を取得します。
    */
   fetchOrders();
 }

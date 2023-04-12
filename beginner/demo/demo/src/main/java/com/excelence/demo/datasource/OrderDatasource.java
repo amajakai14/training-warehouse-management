@@ -33,6 +33,12 @@ public class OrderDatasource implements OrderRepository {
      *  but there might be the case that we design model differently from database
      *  then we can use Entity to represent the data from database
      */
+    /*
+    データベースからのデータのロジックをモデルとは別に分離するのは良い習慣です
+    この場合、ExampleOrder Modelを使ってデータを表現すればいいのです
+    しかし、データベースとは異なるモデル設計をする場合もあるのではないでしょうか
+    となると、データベースからのデータを表現するためにEntityを使用することができます
+    */
     @Override
     public void insertOrder(ExampleOrder order) {
         ExampleOrderEntity entity = ExampleOrderEntity.of(order);
@@ -47,6 +53,7 @@ public class OrderDatasource implements OrderRepository {
     }
     /*
      *  Without ExampleOrderEntity class we can do update like this
+     *  ExampleOrderEntityクラスを使用しない場合は、次のように更新を行うことができます。
      *  jdbcTemplate.update(sql,
      *  order.itemId,
      *  order.name,
@@ -61,6 +68,10 @@ public class OrderDatasource implements OrderRepository {
      *  (int) record.get("id") is called casting
      *  it's a way to convert one type to another
      *  in this case we convert Object to int
+     * データベースからExampleOrder Modelに結果をMapするための
+     * Helper関数 Mapの仕組みを理解するために遊んでみてください
+     * (int) record.get("id") はキャスティングと呼ばれ、
+     * ある型を別の型に変換する方法です。この場合、Objectをintに変換しています。
      */
     private ExampleOrder toModel(Map<String, Object> record) {
         Date date = (Date) record.get("order_date");

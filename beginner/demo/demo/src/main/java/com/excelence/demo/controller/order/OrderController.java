@@ -31,6 +31,9 @@ public class OrderController {
      * in this case, it will map to ExampleOrderRequest
      * then we add a logic to validate the request if it is not valid
      * we send back an error result with status code 400 and custom message
+     * @RequestBodyは、クライアント側からのリクエストボディを、任意のクラスにマッピングします。
+     * この場合、ExampleOrderRequestにマッピングされます。そして、リクエストを検証するロジックを追加します。
+     * もしリクエストが有効でない場合は、ステータスコード400とカスタムメッセージでエラー結果を送り返します。
      */
     public void create(@RequestBody ExampleOrderRequest request) {
         ValidateResult validate = request.validate();
