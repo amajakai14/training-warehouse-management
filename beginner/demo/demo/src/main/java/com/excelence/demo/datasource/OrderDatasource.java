@@ -40,12 +40,6 @@ public class OrderDatasource implements OrderRepository {
                 entity.orderDate);
     }
 
-    /**
-     * we change our Application Model into Entity Model that has the same structure as the database table.
-     * then update it
-     * try to lo learn more about jdbc template, so you can customize your sql command
-     * https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html
-     */
     @Override
     public void updateOrder(ExampleOrder order) {
         ExampleOrderEntity entity = ExampleOrderEntity.of(order);
@@ -59,6 +53,12 @@ public class OrderDatasource implements OrderRepository {
                 entity.orderDate,
                 entity.id
         );
+    }
+
+    @Override
+    public void deleteOrder(int id) {
+        String sql = "DELETE FROM example_order WHERE id = ?";
+        jdbcTemplate.update(sql, id);
     }
 
     @Override
