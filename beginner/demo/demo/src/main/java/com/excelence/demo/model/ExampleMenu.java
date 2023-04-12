@@ -12,7 +12,9 @@ public class ExampleMenu {
         return name;
     }
 
-    public static ExampleMenu empty() { return new ExampleMenu(0,""); }
+    public static ExampleMenu empty() {
+        return new ExampleMenu(0,"");
+    }
 
     public ExampleMenu(int id, String name) {
         this.id = id;

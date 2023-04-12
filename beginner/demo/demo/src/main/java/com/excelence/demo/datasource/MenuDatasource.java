@@ -37,7 +37,6 @@ public class MenuDatasource implements MenuRepository {
                 sql,
                 entity.id,
                 entity.name);
-
     }
 
     //Hint this method will convert Record Map you get from Database to Our declared Model
