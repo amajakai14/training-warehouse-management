@@ -12,7 +12,7 @@ public class ExampleMenuEntity {
         );
     }
 
-    public ExampleOrderEntity(int id, String name) {
+    public ExampleMenuEntity(int id, String name) {
         this.id = id;
         this.name = name;
     }

@@ -31,15 +31,4 @@ public class MenuController {
     }
 }
 
-    @PostMapping(produces = "application/json")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void create(@RequestBody ExampleMenuRequest request) {
-        ValidateResult validate = request.validate();
-        if (!validate.ok()) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, validate.errorMessage());
-        }
-        service.createOrder(request.toExampleOrder());
-    }
-
 
