@@ -29,11 +29,16 @@ public class MenuDatasource implements MenuRepository {
                 .collect(toList());
     }
 
-    /*@Override
+    @Override
     public void insertMenu(ExampleMenu menu) {
+        ExampleMenuEntity entity = ExampleMenuEntity.of(menu);
         String sql = "INSERT INTO example_menu(id, name) VALUES (?, ?)";
+        jdbcTemplate.update(
+                sql,
+                entity.id,
+                entity.name);
 
-    }*/
+    }
 
     //Hint this method will convert Record Map you get from Database to Our declared Model
     private ExampleMenu toModel(Map<String, Object> record) {
