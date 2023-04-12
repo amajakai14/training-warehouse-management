@@ -25,17 +25,17 @@ public class ExampleOrderRequest {
      */
     public ValidateResult validate() {//amountが１以上
         if (amount < 1) return ValidateResult.failed("amount can't be less than 1");
+        if (name == "") return ValidateResult.failed("name is blank");
         if (!OrderStatus.validOf(orderStatus))
             return ValidateResult.failed("orderStatus: PENDING, COMPLETED, CANCELLED are only allowed");
         return ValidateResult.success();
     }
 
-    public ExampleOrder toExampleOrder() {//idが０より大きい
-
+    public ExampleOrder toExampleOrder() {
         return toExampleOrder(0);
     }
 
-    public ExampleOrder toExampleOrder(int id) {//日付が過去ではない
+    public ExampleOrder toExampleOrder(int id) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate formattedDate = LocalDate.parse(orderDate, formatter);
         return new ExampleOrder(id, itemId, name, amount, OrderStatus.valueOf(orderStatus), formattedDate);
