@@ -26,6 +26,9 @@ public class MenuController {
         return new MenusResponse(menus);
     }
 
+    public void create() {
+        service.CreateMenu(ExampleMenu );
+    }
     public MenuController(MenuService service) {
         this.service = service;
     }
