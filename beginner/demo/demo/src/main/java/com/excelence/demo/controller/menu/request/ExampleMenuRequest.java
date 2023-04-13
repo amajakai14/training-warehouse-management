@@ -16,17 +16,15 @@ public class ExampleMenuRequest {
     public ValidateResult validate() {
         if (id < 1) return ValidateResult.failed("id can't be less than 1");
         if (name == "") return ValidateResult.failed("name is blank");
-        /*if (!OrderStatus.validOf(orderStatus))
-            return ValidateResult.failed("orderStatus: PENDING, COMPLETED, CANCELLED are only allowed");*/
         return ValidateResult.success();
     }
+
     public ExampleMenu toExampleMenu() {
-        return toExampleMenu(0);
+        return toExampleMenu();
     }
 
+
     public ExampleMenu toExampleMenu(int id) {
-        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        //LocalDate formattedDate = LocalDate.parse(orderDate, formatter);
         return new ExampleMenu(id,name);
     }
 

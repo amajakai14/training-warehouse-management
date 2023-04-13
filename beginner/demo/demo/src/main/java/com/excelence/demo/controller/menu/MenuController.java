@@ -26,6 +26,15 @@ public class MenuController {
         return new MenusResponse(menus);
     }
 
+    /*
+     * @RequestBody will map the request body from client side
+     * to be Any Class you want it to behave
+     * in this case, it will map to ExampleOrderRequest
+     * then we add a logic to validate the request if it is not valid
+     * we send back an error result with status code 400 and custom message
+     */
+
+//ここから
     @PostMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody ExampleMenuRequest request) {
@@ -36,7 +45,7 @@ public class MenuController {
         }
         service.CreateMenu(request.toExampleMenu());
     }
-
+//ここまで
 
     public MenuController(MenuService service) {
         this.service = service;
