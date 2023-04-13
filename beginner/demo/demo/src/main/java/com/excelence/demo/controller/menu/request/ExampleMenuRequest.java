@@ -9,18 +9,16 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class ExampleMenuRequest {
-    public final int id;
     public final String name;
 
 
     public ValidateResult validate() {
-        if (id < 1) return ValidateResult.failed("id can't be less than 1");
         if (name == "") return ValidateResult.failed("name is blank");
         return ValidateResult.success();
     }
 
     public ExampleMenu toExampleMenu() {
-        return toExampleMenu();
+        return toExampleMenu(0);
     }
 
 
@@ -29,8 +27,7 @@ public class ExampleMenuRequest {
     }
 
 
-    public ExampleMenuRequest(int id, String name) {
-        this.id = id;
+    public ExampleMenuRequest(String name) {
         this.name = name;
     }
 }

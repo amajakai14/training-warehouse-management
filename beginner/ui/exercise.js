@@ -34,7 +34,6 @@ async function handleRegisterMenu(event) {
   const form = event.target.form;
   const formData = new FormData(form);
   const menu = {
-    id: formData.get("id"),
     name: formData.get("name"),
   };
   const response = await fetch("http://localhost:8080/menus", {

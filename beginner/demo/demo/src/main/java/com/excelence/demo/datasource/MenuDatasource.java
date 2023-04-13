@@ -32,10 +32,9 @@ public class MenuDatasource implements MenuRepository {
     @Override
     public void insertMenu(ExampleMenu menu) {
         ExampleMenuEntity entity = ExampleMenuEntity.of(menu);
-        String sql = "INSERT INTO example_menu(id, name) VALUES (?, ?)";
+        String sql = "INSERT INTO example_menu(name) VALUES (?)";
         jdbcTemplate.update(
                 sql,
-                entity.id,
                 entity.name);
     }
 

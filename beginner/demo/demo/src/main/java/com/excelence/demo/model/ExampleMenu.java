@@ -12,7 +12,7 @@ public class ExampleMenu {
         return name;
     }
 
-    public static ExampleMenu empty() {
+   public static ExampleMenu empty() {
         return new ExampleMenu(0,"");
     }
 
