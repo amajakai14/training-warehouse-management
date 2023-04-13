@@ -8,9 +8,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class ExampleOrderRequest {
-    public final int itemId;
+    public final Integer itemId;
     public final String name;
-    public final int amount;
+    public final Integer amount;
     public final String orderStatus;
     public final String orderDate;
 
@@ -37,11 +37,11 @@ public class ExampleOrderRequest {
         return new ExampleOrder(id, itemId, name, amount, OrderStatus.valueOf(orderStatus), formattedDate);
     }
 
-    public ExampleOrderRequest(int itemId, String name, int amount, String orderStatus, String orderDate) {
-        this.itemId = itemId;
-        this.name = name;
-        this.amount = amount;
-        this.orderStatus = orderStatus;
-        this.orderDate = orderDate;
+    public ExampleOrderRequest() {
+        this.itemId = null;
+        this.name = null;
+        this.amount = null;
+        this.orderStatus = null;
+        this.orderDate = null;
     }
 }
