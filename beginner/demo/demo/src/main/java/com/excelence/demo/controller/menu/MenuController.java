@@ -37,6 +37,7 @@ public class MenuController {
 //ここから
     @PostMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
+
     public void create(@RequestBody ExampleMenuRequest request) {
         ValidateResult validate = request.validate();
         if (!validate.ok()) {
