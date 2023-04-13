@@ -12,7 +12,7 @@ public class ExampleMenuRequest {
     public final String name;
 
     public ValidateResult validate() {
-        //if (name == "") return ValidateResult.failed("name is blank");
+        if (name == "") return ValidateResult.failed("name is blank");
         return ValidateResult.success();
     }
 

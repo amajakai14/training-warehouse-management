@@ -23,7 +23,7 @@ public class ExampleOrderRequest {
         名前検証を追加する 空であってはならない
         orderDateは過去であってはならない
      */
-    public ValidateResult validate() {//amountが１以上
+    public ValidateResult validate() {
         if (amount < 1) return ValidateResult.failed("amount can't be less than 1");
         if (name == "") return ValidateResult.failed("name is blank");
         if (!OrderStatus.validOf(orderStatus))
