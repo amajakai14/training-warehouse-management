@@ -1,14 +1,10 @@
 package com.excelence.demo.controller.menu.request;
 
 import com.excelence.demo.model.ExampleMenu;
-import com.excelence.demo.model.ExampleOrder;
-import com.excelence.demo.model.OrderStatus;
 import com.excelence.demo.model.ValidateResult;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 public class ExampleMenuRequest {
+    //public final int id;
     public final String name;
 
     public ValidateResult validate() {

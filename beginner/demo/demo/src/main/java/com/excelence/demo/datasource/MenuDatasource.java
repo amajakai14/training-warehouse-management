@@ -22,7 +22,7 @@ public class MenuDatasource implements MenuRepository {
     //exercise to write sql query to get all menu
     @Override
     public List<ExampleMenu> getAllMenu() {
-        String sql = "SELECT * FROM public.example_menu";
+        String sql = "SELECT * FROM example_menu";
         List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
         return records.stream()
                 .map(this::toModel)
