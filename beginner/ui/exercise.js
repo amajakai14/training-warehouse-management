@@ -36,6 +36,7 @@ async function handleRegisterMenu(event) {
   const menu = {
     name: formData.get("name"),
   };
+  
   const response = await fetch("http://localhost:8080/menus", {
     method: "POST",
     headers: {

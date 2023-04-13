@@ -34,7 +34,7 @@ public class MenuController {
      * we send back an error result with status code 400 and custom message
      */
 
-//ここから
+
     @PostMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
 
@@ -46,7 +46,7 @@ public class MenuController {
         }
         service.CreateMenu(request.toExampleMenu());
     }
-//ここまで
+
 
     public MenuController(MenuService service) {
         this.service = service;
