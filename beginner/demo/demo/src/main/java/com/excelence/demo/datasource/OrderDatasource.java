@@ -69,6 +69,12 @@ public class OrderDatasource implements OrderRepository {
         return toModel(records.get(0));
     }
 
+    @Override
+    public void deleteOrder(int id) {
+        String sql = "DELETE FROM example_order WHERE id = ?";
+        jdbcTemplate.update(sql, id);
+    }
+
     private ExampleOrder toModel(Map<String, Object> record) {
         Date date = (Date) record.get("order_date");
         return new ExampleOrder(

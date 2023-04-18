@@ -141,5 +141,5 @@ async function handleDeleteOrder(id) {
   if (!response.ok) {
     throw new Error("Could not delete order");
   }
-  fetchOrders();
+  await fetchOrders();
 }

@@ -12,4 +12,6 @@ public interface OrderRepository {
     void updateOrder(ExampleOrder order);
 
     ExampleOrder getOrder(int id);
+
+    void deleteOrder(int id);
 }

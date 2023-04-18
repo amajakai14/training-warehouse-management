@@ -12,4 +12,6 @@ public interface MenuRepository {
     ExampleMenu getMenu(int menuId);
 
     void updateMenu(ExampleMenu menu);
+
+    void deleteMenu(int menuId);
 }

@@ -26,6 +26,10 @@ public class MenuService {
         repository.updateMenu(menu);
     }
 
+    public void deleteMenu(int menuId) {
+        repository.deleteMenu(menuId);
+    }
+
     public MenuService(MenuRepository repository) {
         this.repository = repository;
     }

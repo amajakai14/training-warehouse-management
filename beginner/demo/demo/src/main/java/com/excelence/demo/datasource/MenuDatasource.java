@@ -46,6 +46,12 @@ public class MenuDatasource implements MenuRepository {
         jdbcTemplate.update(sql, menu.name(), menu.id());
     }
 
+    @Override
+    public void deleteMenu(int menuId) {
+        String sql = "DELETE FROM example_menu WHERE id = ?";
+        jdbcTemplate.update(sql, menuId);
+    }
+
     private ExampleMenu toModel(Map<String, Object> record) {
         return new ExampleMenu(
                 (int) record.get("id"),
