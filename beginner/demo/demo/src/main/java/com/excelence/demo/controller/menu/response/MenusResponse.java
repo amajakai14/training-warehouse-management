@@ -5,7 +5,7 @@ import com.excelence.demo.model.ExampleMenu;
 import java.util.List;
 
 public class MenusResponse {
-    public final List<ExampleMenu> menus;
+    public List<ExampleMenu> menus;
 
     public MenusResponse(List<ExampleMenu> menus) {
         this.menus = menus;
