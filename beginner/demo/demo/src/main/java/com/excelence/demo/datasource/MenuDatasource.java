@@ -27,6 +27,25 @@ public class MenuDatasource implements MenuRepository {
                 .collect(toList());
     }
 
+    @Override
+    public void insertMenu(ExampleMenu menu) {
+        String sql = "INSERT INTO example_menu (name) VALUES (?)";
+        jdbcTemplate.update(sql, menu.name());
+    }
+
+    @Override
+    public ExampleMenu getMenu(int menuId) {
+        String sql = "SELECT * FROM example_menu WHERE id = ?";
+        Map<String, Object> record = jdbcTemplate.queryForMap(sql, menuId);
+        return toModel(record);
+    }
+
+    @Override
+    public void updateMenu(ExampleMenu menu) {
+        String sql = "UPDATE example_menu SET name = ? WHERE id = ?";
+        jdbcTemplate.update(sql, menu.name(), menu.id());
+    }
+
     private ExampleMenu toModel(Map<String, Object> record) {
         return new ExampleMenu(
                 (int) record.get("id"),
