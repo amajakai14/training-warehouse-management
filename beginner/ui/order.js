@@ -132,14 +132,5 @@ async function handleUpdateOrder(event, id) {
 }
 
 /*
- * Exercise Implement the Java delete Controller
+ * Exercise Implement the Java  delete Controller and Javascript function
  */
-async function handleDeleteOrder(id) {
-  const response = await fetch(`http://localhost:8080/orders/${id}`, {
-    method: "DELETE",
-  });
-  if (!response.ok) {
-    throw new Error("Could not delete order");
-  }
-  fetchOrders();
-}
