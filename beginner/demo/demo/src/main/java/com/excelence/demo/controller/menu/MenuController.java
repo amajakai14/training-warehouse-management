@@ -23,8 +23,8 @@ public class MenuController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void create(@RequestBody ExampleMenu menu) {
-        service.createMenu(menu);
+    public void create(@RequestBody ExampleMenuRequest request) {
+        service.createMenu(request.toMenu());
     }
 
     @GetMapping("/{menuId}")
@@ -35,8 +35,8 @@ public class MenuController {
 
     @PutMapping("/{menuId}")
     @ResponseStatus(HttpStatus.OK)
-    public void updateMenu(@PathVariable int menuId, @RequestBody ExampleMenu menu) {
-        service.updateMenu(menu);
+    public void updateMenu(@PathVariable int menuId, @RequestBody ExampleMenuRequest request) {
+        service.updateMenu(request.toMenu());
     }
 
     public MenuController(MenuService service) {
