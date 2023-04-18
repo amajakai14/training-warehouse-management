@@ -27,7 +27,14 @@ public class MenuDatasource implements MenuRepository {
                 .collect(toList());
     }
 
-    //Hint this method will convert Record Map you get from Database to Our declared Model
+    @Override
+    public void insertMenu(ExampleMenu menu) {
+        String sql = "INSERT INTO example_menu(name) VALUES (?)";
+        jdbcTemplate.update(
+                sql,
+                menu.name);
+    }
+
     private ExampleMenu toModel(Map<String, Object> record) {
         return new ExampleMenu(
                 (int) record.get("id"),

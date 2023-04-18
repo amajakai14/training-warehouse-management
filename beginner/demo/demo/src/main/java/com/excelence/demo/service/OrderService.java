@@ -14,7 +14,6 @@ public class OrderService {
         return orderRepository.getAllOrder();
     }
 
-
     public void createOrder(ExampleOrder order) {
         orderRepository.insertOrder(order);
     }
