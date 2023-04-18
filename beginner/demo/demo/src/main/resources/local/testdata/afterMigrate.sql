@@ -12,8 +12,12 @@ VALUES
 ,(3, 'PO-003', 3, 'PENDING', '2022-01-01')
 ;
 INSERT INTO example_menu (id, name) VALUES
-(1, 'carrot')
-,(2, '玉ねぎ')
-,(3, '和牛')
+(1,'carrot')
+,(2,'玉ねぎ')
+,(3,'和牛')
 ;
+
+select setval('example_user_id_seq', 2);
+select setval('example_order_id_seq', 3);
+select setval('example_menu_id_seq', 3);
 
