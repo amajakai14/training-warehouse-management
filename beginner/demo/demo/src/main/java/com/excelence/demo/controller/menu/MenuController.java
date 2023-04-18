@@ -5,10 +5,7 @@ import com.excelence.demo.model.ExampleMenu;
 import com.excelence.demo.service.MenuService;
 import com.excelence.demo.service.OrderService;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,7 +21,23 @@ public class MenuController {
         return new MenusResponse(menus);
     }
 
-    //Add your code here
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void create(@RequestBody ExampleMenu menu) {
+        service.createMenu(menu);
+    }
+
+    @GetMapping("/{menuId}")
+    @ResponseStatus(HttpStatus.OK)
+    public ExampleMenu getMenuById(@PathVariable int menuId) {
+        return service.getMenuById(menuId);
+    }
+
+    @PutMapping("/{menuId}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateMenu(@PathVariable int menuId, @RequestBody ExampleMenu menu) {
+        service.updateMenu(menu);
+    }
 
     public MenuController(MenuService service) {
         this.service = service;
