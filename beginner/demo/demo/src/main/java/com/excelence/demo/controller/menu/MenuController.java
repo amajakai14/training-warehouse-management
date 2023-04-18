@@ -17,8 +17,7 @@ public class MenuController {
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public MenusResponse getAll() {
-        //TODO: call method from MenuService and fix the return value
-        return null;
+        return new MenusResponse(service.getAllMenu());
     }
 
     public MenuController(MenuService service) {

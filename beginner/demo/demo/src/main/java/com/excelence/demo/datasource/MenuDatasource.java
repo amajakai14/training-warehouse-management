@@ -11,15 +11,20 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.stream.Collectors.toList;
+
 @Repository
 public class MenuDatasource implements MenuRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    //exercise to write sql query to get all menu
     @Override
     public List<ExampleMenu> getAllMenu() {
-        return null;
+        String sql = "SELECT * FROM example_menu";
+        List<Map<String, Object>> records = jdbcTemplate.queryForList(sql);
+        return records.stream()
+                .map(this::toModel)
+                .collect(toList());
     }
 
     //Hint this method will convert Record Map you get from Database to Our declared Model
