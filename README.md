@@ -2,6 +2,14 @@
 
 ## Add Data that into Database
 
+#### Learn these before go through tutorial
+
+- learn more about RESTapi [here](https://tech.012grp.co.jp/entry/rest_api_basics)
+- learn more about CRUD function [here](https://qiita.com/fukuma_biz/items/a9e8d18467fe3e04068e)
+- learn more about fetch() function [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- learn more about json [here](https://cloudapi.kddi-web.com/magazine/json-javascript-object-notation)
+- learn more about http status [here](https://digital-marketing.jp/seo/http-status-code/)
+
 ### Tutorial
 
 run our `DemoApplication` once again
@@ -32,11 +40,3 @@ Hint: I have comment some steps to do in Java already let's find them!
 Don't Worry if if you add some data to Database but it's gone after you restart the server  
 Normally, It woud not but I did config it to reset the data every time you run the server that's call migration  
 We will talk about it later
-
-#### Learn more
-
-- learn more about RESTapi [here](https://tech.012grp.co.jp/entry/rest_api_basics)
-- learn more about CRUD function [here](https://qiita.com/fukuma_biz/items/a9e8d18467fe3e04068e)
-- learn more about fetch() function [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- learn more about json [here](https://cloudapi.kddi-web.com/magazine/json-javascript-object-notation)
-- learn more about http status [here](https://digital-marketing.jp/seo/http-status-code/)
