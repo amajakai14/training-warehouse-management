@@ -8,7 +8,7 @@ there might be some steps that you have to follow along depend on what OS you ar
 
 #### Install tools
 
-- Install `Git` from [HERE](https://git-scm.com/downloads) 
+- Install `Git` from [HERE](https://git-scm.com/downloads)
   - also `Git Bash`
 - Install `Fork` from [HERE](https://git-fork.com/)
   - [How to use fork](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
@@ -52,8 +52,8 @@ there might be some steps that you have to follow along depend on what OS you ar
 
 before this step Docker should be ready to use
 
-- run `git bash` terminal 
-  -  `cd` to the folder where you cloned this project
+- run `git bash` terminal
+  - `cd` to the folder where you cloned this project
   - run command `./beginner/demo/demo/local/start.sh`
 
 ## Server Side and Client Side
@@ -69,6 +69,10 @@ Normally Client Side is where someone comes and try to manipulate data such as r
 On client side we provide UI to let user act with screen
 
 On the server side we just receive an action to make a record to save data permanently on our Storage which can be any type (In this project we will use Postgres Database as our storage)
+
+#### Learn this before go through tutorial
+
+- learn more about async await [here](https://tcd-theme.com/2021/09/javascript-asyncawait.html)
 
 ### Tutorial
 
@@ -94,7 +98,3 @@ see the `@RequestMapping` that point to `"/hello"` and now see the function in j
 ### Exercise
 
 in `index.js` try to make `helloExercise()` to hook up the another from message from `ExerciseController.java`
-
-#### Learn more
-
-- learn more about async await [here](https://tcd-theme.com/2021/09/javascript-asyncawait.html)
