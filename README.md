@@ -23,6 +23,13 @@ to see what inside our Database we can use GUI Application from below
   - in PGAdmin warehouse server -> databases -> `warehouse` -> `Schemas` -> `Tables` -> `example_???` tables will be shown
   - use double click -> `View/Edit Data` -> `All Rows` -> you will see some data that were prepared we will use those data in the tutorial
 
+#### Learn these before go through tutorial
+
+- learn more about RESTapi [here](https://tech.012grp.co.jp/entry/rest_api_basics)
+- learn more about fetch() function [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- learn more about json [here](https://cloudapi.kddi-web.com/magazine/json-javascript-object-notation)
+- learn more about http status [here](https://digital-marketing.jp/seo/http-status-code/)
+
 ### Tutorial
 
 run our `DemoApplication` once again
@@ -62,10 +69,3 @@ I will leave some detail in learn more section to let you do your study
 
 in exercise.html there is a button to show menu which is broken. Try to make it work!
 Hint: I have comment some steps to take in Java already let's find them!
-
-#### Learn more
-
-- learn more about RESTapi [here](https://tech.012grp.co.jp/entry/rest_api_basics)
-- learn more about fetch() function [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- learn more about json [here](https://cloudapi.kddi-web.com/magazine/json-javascript-object-notation)
-- learn more about http status [here](https://digital-marketing.jp/seo/http-status-code/)
