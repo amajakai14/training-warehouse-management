@@ -2,6 +2,10 @@
 
 ## Add Data that into Database
 
+#### Learn this before go through tutorial
+
+- learn more about Eventlistener [here](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
+
 ### Tutorial
 
 run our `DemoApplication` once again
@@ -20,7 +24,3 @@ let's try edit Order name amount or even date
 ### Exercise
 
 make the update menu function work
-
-#### Learn more
-
-- learn more about Eventlistener [here](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
