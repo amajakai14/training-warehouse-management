@@ -10,7 +10,8 @@ there might be some steps that you have to follow along depend on what OS you ar
 
 - Install `Git` from [HERE](https://git-scm.com/downloads)
   - also `Git Bash`
-- Install `Fork` from [HERE](https://git-fork.com/)
+- [Fork this repository](https://docs.github.com/ja/get-started/quickstart/fork-a-repo)
+- Install `Fork Application` from [HERE](https://git-fork.com/)
   - [How to use fork](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
 - Install `JDK11` from [HERE](https://www.oracle.com/java/technologies/downloads/#java11) **remember where did you install into folder**
   - **DO NOT INSTALL JDK FROM OTHER PLACE ELSE THERE MIGHT BE A DIFFICULTIES INSTALLING THIS PROJECT**
