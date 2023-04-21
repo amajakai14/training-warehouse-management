@@ -1,26 +1,26 @@
-# Fourth lesson
+# 第4回レッスン
 
-## Add Data that into Database
+## データベースにデータを追加する
 
-#### Learn this before go through tutorial
+#### チュートリアルの前に
 
-- learn more about Eventlistener [here](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
+- Eventlistenerについて(https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
 
-### Tutorial
+### チュートリアル
 
-run our `DemoApplication` once again
+もう一度 `DemoApplication` を実行する。
 
-open `order.html` file
+order.html` ファイルを開く
 
-#### What's added
+#### 追加されたもの
 
-- autoload to show order table
-- edit buttons for each row have been added
-- A Pop Up screen to see each order by clicking `edit` button
-- Edit function that send a edit request to server
+- オートロードでオーダーテーブルを表示する
+- 各行の編集ボタンが追加
+- 編集ボタンをクリックすると、ポップアップ画面で各注文が確認できます。
+- サーバーに編集要求を送る編集機能
 
-let's try edit Order name amount or even date
+Order name amount or even dateを編集してみましょう
 
-### Exercise
+### エクササイズ
 
-make the update menu function work
+アップデートメニュー機能を動作させる
