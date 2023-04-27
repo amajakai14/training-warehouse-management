@@ -96,10 +96,6 @@ vscodeを開く -> open -> training-warehouse-management
 ### Tutorialで重要な関数
   - Async/Awaitについては[こちら](https://tcd-theme.com/2021/09/javascript-asyncawait.html)
 
-
-
-
-
 ## Exercise
 `index.js`の`helloExercise()`を編集し、
 `ExerciseController.java`からのメッセージを表示させてみましょう。
