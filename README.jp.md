@@ -51,9 +51,11 @@
 
 Tutorialに移る前にDockerを起動しておく必要があります。
 - `git bash`もしくは `terminal`を起動します。
-  - `cd` コマンドでこのプロジェクトをクローンしたフォルダに移動します。
+  - `cd`コマンドでこのプロジェクトをクローンしたフォルダに移動します。  
+  `cd`コマンドの使い方や`linux`でよく使うコマンドについては[こちら](https://qiita.com/arene-calix/items/41d8d4ba572f1d652727)を参考にして下さい。
   - こちらのコマンドを入力して下さい。
-  `./beginner/demo/demo/local/start.sh`
+  `./beginner/demo/demo/local/start.sh`  
+  .shファイルの実行方法については[こちら](https://linuxfan.info/post-1486)を参考にして下さい。
 
 ## クライアントとサーバー
 
