@@ -10,9 +10,10 @@
 - このリポジトリを[Fork](https://docs.github.com/ja/get-started/quickstart/fork-a-repo)します。
 - ローカル上の任意の場所にリポジトリのクローンを作成します。
   - `git bash`もしくは `terminal`を起動します。
-  - `cd` コマンドでリポジトリをクローンしたいフォルダに移動します。
-  - 下記のコマンドを入力して下さい。
-  - `git clone [リポジトリのURL]`
+  - `cd` コマンドでリポジトリをクローンしたいフォルダに移動します。  
+    `cd`コマンドの使い方や`linux`でよく使うコマンドについては[こちら](https://qiita.com/arene-calix/items/41d8d4ba572f1d652727)を参考にして下さい。
+  - 下記のコマンドを入力して下さい。  
+    `git clone [リポジトリのURL]`
 - `Fork` を[こちら](https://git-fork.com/)からインストールします。
   - Forkの使い方は[こちら](https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3)
 
@@ -53,9 +54,9 @@ Tutorialに移る前にDockerを起動しておく必要があります。
 - `git bash`もしくは `terminal`を起動します。
   - `cd`コマンドでこのプロジェクトをクローンしたフォルダに移動します。  
   `cd`コマンドの使い方や`linux`でよく使うコマンドについては[こちら](https://qiita.com/arene-calix/items/41d8d4ba572f1d652727)を参考にして下さい。
-  - こちらのコマンドを入力して下さい。
+  - こちらのコマンドを入力し、.shファイルを実行して下さい。
   `./beginner/demo/demo/local/start.sh`  
-  .shファイルの実行方法については[こちら](https://linuxfan.info/post-1486)を参考にして下さい。
+  .shファイルの詳しい実行方法については[こちら](https://linuxfan.info/post-1486)を参考にして下さい。
 
 ## クライアントとサーバー
 
