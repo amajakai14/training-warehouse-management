@@ -6,11 +6,6 @@
 以下の参考サイトは、本プロジェクトでのクライアント(UI)とサーバー(Java)のデータのやり取りにおいて、  
 非常に重要です。
 Tutorialを行う前に、確認しておきましょう。
-- RESTapiについては[こちら](https://tech.012grp.co.jp/entry/rest_api_basics)
-- CRUD機能については[こちら](https://qiita.com/fukuma_biz/items/a9e8d18467fe3e04068e)
-- fetch関数については[こちら](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- jsonについては[こちら](https://cloudapi.kddi-web.com/magazine/json-javascript-object-notation)
-- HTTPステータスについては[こちら](https://digital-marketing.jp/seo/http-status-code/)
 - Springフレームワークのアノテーションについては[こちら](https://camp.trainocate.co.jp/magazine/spring-annotation/)
 
 ## Tutorial
