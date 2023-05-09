@@ -6,8 +6,6 @@
   
 - [こちらも参考に](js_htmldom_eventlistener.asp)
 
-- Spring Bootについて詳しくは[こちら](https://midorigame-jo.com/spring-requestmapping/)
-
 - アノテーションについて詳しくは[こちら](https://www.sejuku.net/blog/22694)
 
 - [こちらも参考に](https://www.tairaengineer-note.com/springboot-http-status-code)
@@ -34,13 +32,8 @@ order.html` ファイルを開く
 - リクエストの受信(Controller)
 - 処理の委譲(Service)
 - データベース接続(Repository)
-- 
 の処理を構築する必要があります。
 
 - 既に登録されているデータをどうやって取り出すか？
 - その内容を更新するのはどうするのか?
 を考えながら取り組んでください。
-
-
-[HINT]
-- Spring Bootでよく使われるアノテーション(https://qiita.com/kenny_J_7/items/79a36d14dd6c892ae430)
