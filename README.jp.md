@@ -15,7 +15,7 @@
 
 そのためには、新しい`migration`ファイルを追加することが必要です。
 
-##　Exercise
+## Exercise
 
 `V000006_add_price_menu.sql`という`migration`ファイルを追加し、以下のコードを記述します。
 
@@ -30,7 +30,7 @@ value(価格)の列には=NULL=が記入されています。
 [テーブル構造を変更する]https://www.javadrive.jp/mysql/table/index18.html
 
 ### EXTRA
-`Carrot``玉ねぎ``和牛`はどこから来たのでしょうか？
+`Carrot` `玉ねぎ` `和牛`はどこから来たのでしょうか？
 
 `local/testdata`パッケージには初期データがあり、指定したテーブルのデータを常に削除し、データを追加するようになっています。
 
