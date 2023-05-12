@@ -29,8 +29,10 @@ step3.4で行った動作を思い出し、活用しながら進めてくださ�
 
 - この[説明](https://yu-report.com/entry/postman/)に従ってPostmanをインストールします。
   - [POSTMANの使用例](https://rainbow-engine.com/postman-howto-intro/)
-  - POSTMANとは？
-　  =APIのテストを行うためのツール。
+  
+   POSTMANとは？
+   
+   =APIのテストを行うためのツール。
 
 　  手早くHTTPリクエストを送信してエンドポイントが正しく機能しているか確認することができます。
   - 今度は`POSTMAN`を使ってJavaサーバーにアクセスしてみましょう。
