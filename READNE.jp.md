@@ -13,18 +13,16 @@ step3.4で行った動作を思い出し、活用しながら進めてくださ�
 
 [HINT]
 
-[asyncについて](https://qiita.com/soarflat/items/1a9613e023200bbebcb3)
-
-[メソッドと削除処理](https://midorigame-jo.com/spring-requestmapping/)
-
-[↑関連資料](https://qiita.com/soarflat/items/1a9613e023200bbebcb3)
+- [asyncについて](https://qiita.com/soarflat/items/1a9613e023200bbebcb3)
+- [メソッドと削除処理](https://midorigame-jo.com/spring-requestmapping/)
+- [↑関連資料](https://qiita.com/soarflat/items/1a9613e023200bbebcb3)
  
 最後のステップに行く前に、基礎的なことをもう一度思い出しましょう
 
 - [APIとは](https://aws.amazon.com/what-is/api/)
 - [Gitとは](https://www.sejuku.net/blog/5756)
 - [HTMLとCSS](https://fastcoding.jp/blog/all/jquery/html-css-javascript/)
-- [こちらも参考に] (https://www.pc-master.jp/words/html-css.html)
+- [↑こちらも参考に](https://www.pc-master.jp/words/html-css.html)
 - [Javascript](https://www.javadrive.jp/javascript/)
 
 ### EXTRA
@@ -32,7 +30,6 @@ step3.4で行った動作を思い出し、活用しながら進めてくださ�
 - この[説明](https://yu-report.com/entry/postman/)に従ってPostmanをインストールします。
   - [POSTMANの使用例](https://rainbow-engine.com/postman-howto-intro/)
   - POSTMANとは？
-　　
 　  =APIのテストを行うためのツール。
 
 　  手早くHTTPリクエストを送信してエンドポイントが正しく機能しているか確認することができます。
